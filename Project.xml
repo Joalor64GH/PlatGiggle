@@ -27,7 +27,9 @@
 	
 	<!-- _____________________________ Path Settings ____________________________ -->
 	
-	<set name="BUILD_DIR" value="export" />
+	<set name="BUILD_DIR" value="export/debug" if="debug" />
+	<set name="BUILD_DIR" value="export/release" unless="debug" />
+
 	<source path="source" />
 	<assets path="assets" />
 	
@@ -40,9 +42,9 @@
 	
 	<!--In case you want to use the ui package-->
 	<haxelib name="flixel-ui" />
-	
-	<!--In case you want to use nape with flixel-->
-	<!--<haxelib name="nape-haxe4" />-->
+
+	<haxelib name="hscript" />
+	<haxelib name="hxcpp-debug-server" if="desktop debug" />
 	
 	<!-- ______________________________ Haxedefines _____________________________ -->
 	
